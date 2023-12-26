@@ -24,8 +24,14 @@ protected:
 public:
 	AAuraCharacter();
 
+	virtual void PossessedBy(AController* NewController) override;
+	virtual void OnRep_PlayerState() override;
+	
 	UFUNCTION(BlueprintCallable, Category = "Camera")
 	USpringArmComponent* GetCameraBoom();
 	UFUNCTION(BlueprintCallable, Category = "Camera")
 	UCameraComponent* GetFollowCamera();
+
+private:
+	void InitAbilityActorInfo();
 };
