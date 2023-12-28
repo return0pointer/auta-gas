@@ -33,5 +33,5 @@ public:
 	UCameraComponent* GetFollowCamera();
 
 private:
-	void InitAbilityActorInfo();
+	virtual void InitAbilityActorInfo() override;
 };
