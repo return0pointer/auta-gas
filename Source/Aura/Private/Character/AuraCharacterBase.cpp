@@ -31,7 +31,8 @@ void AAuraCharacterBase::ApplyEffectToSelft(TSubclassOf<UGameplayEffect> Gamepla
 {
 	check(IsValid(GetAbilitySystemComponent()));
 	check(GameplayEffectClass);
-	const FGameplayEffectContextHandle ContextHandle = GetAbilitySystemComponent()->MakeEffectContext();
+	FGameplayEffectContextHandle ContextHandle = GetAbilitySystemComponent()->MakeEffectContext();
+	ContextHandle.AddSourceObject(this);
 	const FGameplayEffectSpecHandle SpectHandle = GetAbilitySystemComponent()->MakeOutgoingSpec(
 		GameplayEffectClass, level, ContextHandle);
 	GetAbilitySystemComponent()->ApplyGameplayEffectSpecToTarget(*SpectHandle.Data.Get(), GetAbilitySystemComponent());
@@ -41,6 +42,7 @@ void AAuraCharacterBase::InitializeDefaultAttributes() const
 {
 	ApplyEffectToSelft(DefaultPrimaryAttributes, 1.f);
 	ApplyEffectToSelft(DefaultSecondaryAttributes, 1.f);
+	ApplyEffectToSelft(DefaultVatalAttributes, 1.f);
 }
 
 
