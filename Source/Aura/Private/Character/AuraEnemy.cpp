@@ -40,6 +40,7 @@ void AAuraEnemy::BeginPlay()
 {
 	Super::BeginPlay();
 	InitAbilityActorInfo();
+	InitializeDefaultAttributes();
 }
 
 void AAuraEnemy::InitAbilityActorInfo()
