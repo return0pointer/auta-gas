@@ -86,7 +86,7 @@ public:
 	
 	/*
 	 *Secondary Attributes
-	*/
+	 */
 	UPROPERTY(BlueprintReadOnly, Category = "Attribute|Secondary|Armor",ReplicatedUsing = OnRep_Armor)
 	FGameplayAttributeData Armor;
 	ATTRIBUTE_ACCESSORS(UAuraAttributeSet, Armor)
@@ -131,7 +131,7 @@ public:
 	UFUNCTION()
 	void OnRep_Health(const FGameplayAttributeData& OldHealth) const;
 	UFUNCTION()
-	void OnRep_Mana(const FGameplayAttributeData& OldMana) const;	
+	void OnRep_Mana(const FGameplayAttributeData& OldMana) const;
 	
 	UFUNCTION()
 	void OnRep_Strength(const FGameplayAttributeData& OldStrength) const;
